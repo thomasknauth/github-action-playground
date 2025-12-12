@@ -1,0 +1,19 @@
+name: my-awesome-cicd-tool
+
+on: push
+
+jobs:
+  my_first_job:
+    name: Rock my world
+    strategy:
+      matrix:
+        compiler: [clang, gcc]
+    steps:
+      - name: compile the code
+        env:
+          CC: ${{ matrix.compiler }}
+        run: |
+          echo Building with $CC
+          $CC --version
+  my_second_job:
+    name: Big city safari
