@@ -18,3 +18,9 @@ jobs:
           $CC --version
   my_second_job:
     name: Big city safari
+    runs-on: ubuntu-latest
+    needs: my_first_job
+    steps:
+      - name: Test the code
+        run: |
+          echo Testing the code
