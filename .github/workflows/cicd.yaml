@@ -19,9 +19,9 @@ jobs:
           mkdir $CC
           echo '#!/bin/bash\n\necho hello, '$CC ' world!'>> $CC/binary
           chmod +x $CC/binary
-    - uses: actions/upload-artifact@v4
-      with:
-        path: $CC/
+      - uses: actions/upload-artifact@v4
+        with:
+          path: $CC/
 
   my_second_job:
     name: Running tests
